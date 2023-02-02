@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Booklooth</string>
+
+    <!-- Bottom Navigation View -->
+    <string name="Home">Home</string>
+    <string name="Search">Search</string>
+    <string name="Feed">Feed</string>
+    <string name="Mypage">Mypage</string>
 </resources>
