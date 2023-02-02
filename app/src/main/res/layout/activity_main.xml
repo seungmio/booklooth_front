@@ -1,18 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:id="@+id/some_id"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="android studio!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/bookluetoot"
+        android:layout_width="151dp"
+        android:layout_height="26dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:gravity="top"
+        app:srcCompat="@drawable/main_booklooth" />
+
+    <ImageButton
+        android:id="@+id/bell"
+        android:layout_width="26.25dp"
+        android:layout_height="25.62dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="21.75dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:clipToOutline="true"
+        android:background="@color/white"
+        app:srcCompat="@drawable/main_bell" />
+
+    <RelativeLayout
+        android:id="@+id/frame_17"
+        android:layout_width="318dp"
+        android:layout_height="124dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="21dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"
+        >
+
+        <ImageButton
+            android:id="@+id/myCalendarBtn"
+            android:layout_width="153dp"
+            android:layout_height="124dp"
+            android:background="@color/white"
+            app:srcCompat="@drawable/main_calendarbtn" />
+
+        <ImageButton
+            android:id="@+id/bestSellerBtn"
+            android:layout_width="153dp"
+            android:layout_height="124dp"
+            android:background="@color/white"
+            android:layout_marginLeft="161dp"
+            app:srcCompat="@drawable/main_bestsellerbtn" />
+
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/reviewBtn"
+        android:layout_width="319dp"
+        android:layout_height="124dp"
+        android:layout_below="@+id/frame_17"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="13dp"
+        android:background="@color/white"
+        app:srcCompat="@drawable/main_reviewbtn" />
+
+    <ImageView
+        android:id="@+id/line"
+        android:layout_width="360dp"
+        android:layout_height="0.2px"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="357dp"
+        app:srcCompat="@drawable/main_line" />
+
+    <ImageView
+        android:id="@+id/bestReview"
+        android:layout_width="72dp"
+        android:layout_height="16dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="21dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="366dp"
+        android:gravity="top"
+        app:srcCompat="@drawable/main_bestreview" />
+
+    <LinearLayout
+        android:id="@+id/list"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="17dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="399dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/recyclierviewlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/detailviewfragment_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="40dp"
+                >
+            </androidx.recyclerview.widget.RecyclerView>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/botton_navigation"
+        android:background="@color/blue_43"
+        app:itemIconTint="@color/gray_6"
+        app:itemIconSize="39dp"
+        app:menu="@menu/bottom_navigation_main"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        app:labelVisibilityMode="unlabeled"
+        >
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+</RelativeLayout>
