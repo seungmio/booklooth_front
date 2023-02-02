@@ -63,10 +63,10 @@
         android:id="@+id/reviewBtn"
         android:layout_width="319dp"
         android:layout_height="124dp"
+        android:layout_below="@+id/frame_17"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="21dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="217dp"
+        android:layout_marginTop="13dp"
         android:background="@color/white"
         app:srcCompat="@drawable/main_reviewbtn" />
 
@@ -93,19 +93,27 @@
     <LinearLayout
         android:id="@+id/list"
         android:orientation="vertical"
-        android:layout_width="319dp"
-        android:layout_height="2817dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="17dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="399dp"
-        android:clipToOutline="true"
         >
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/detailviewfragment_recyclerview"
+
+        <RelativeLayout
+            android:id="@+id/recyclierviewlayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="wrap_content" >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/detailviewfragment_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="40dp"
+                >
+            </androidx.recyclerview.widget.RecyclerView>
+        </RelativeLayout>
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
