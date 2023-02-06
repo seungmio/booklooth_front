@@ -1,10 +1,12 @@
-package com.example.booklooth;
+package com.example.booklooth.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.booklooth.R;
 
 public class SplashActivity extends AppCompatActivity {
 
