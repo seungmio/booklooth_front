@@ -24,7 +24,7 @@ public class AlarmActivity extends AppCompatActivity {
 
         alarmListView.setAdapter(alarmListViewAdapter);
 
-        // 알림 선택 시 그 페이지로 이동?
+        // 알림 선택 시 그 페이지로 이동?하는 이벤트 구현
     }
 
     public void InitializeAlarmData() {

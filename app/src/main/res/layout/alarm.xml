@@ -7,8 +7,12 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="알림" />
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="알림"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/main_color"/>
 
     <ListView
         android:id="@+id/alarmListView"
