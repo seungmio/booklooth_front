@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:gravity="center_vertical"
@@ -15,7 +15,7 @@
             android:layout_height="30dp"
             android:layout_margin="7dp"/>
         <TextView
-            android:id="@+id/detailviewitem_profile_textview"
+            android:id="@+id/userNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="User name"
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="270dp"
+            android:layout_marginLeft="200dp"
             android:background="@color/white"
             android:src="@drawable/main_morebtn"/>
     </LinearLayout>
