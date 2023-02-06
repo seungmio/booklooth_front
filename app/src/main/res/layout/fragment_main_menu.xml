@@ -24,7 +24,7 @@
                 android:src="@drawable/main_booklooth" />
 
             <ImageButton
-                android:id="@+id/imageButton5"
+                android:id="@+id/mainAlarm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -38,22 +38,23 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imageButton9"
+                android:id="@+id/bookCalImageBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/main_calendarbtn" />
+
+            <ImageButton
+                android:id="@+id/bestSellerImageBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:src="@drawable/main_bestsellerbtn" />
 
-            <ImageButton
-                android:id="@+id/imageButton8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/main_calendarbtn" />
         </LinearLayout>
 
         <ImageButton
-            android:id="@+id/imageButton10"
+            android:id="@+id/reviewImageBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/main_reviewbtn" />
