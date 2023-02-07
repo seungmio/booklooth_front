@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -34,6 +36,20 @@ public class MainMenuSearchFragment extends Fragment {
             }
         });
 
+        this.sampleSearchData();
+
+        ListView searchListView = (ListView)rootView.findViewById(R.id.searchListView);
+
+        final SearchListViewAdapter searchListViewAdapter = new SearchListViewAdapter(getActivity(), searchListViewData);
+
+        searchListView.setAdapter(searchListViewAdapter);
+
+
         return rootView;
+    }
+
+    public void sampleSearchData() {
+        searchListViewData = new ArrayList<SearchListViewData>();
+        searchListViewData.add(new SearchListViewData(R.drawable.login_google, "노인과 바다", "작가 이름"));
     }
 }
