@@ -1,4 +1,4 @@
-package com.example.booklooth;
+package com.example.booklooth.data;
 
 public class SearchListViewData {
     private int bookImage;

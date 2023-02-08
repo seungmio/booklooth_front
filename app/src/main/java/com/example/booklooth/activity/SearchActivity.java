@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 
+import com.example.booklooth.data.SearchListViewData;
+
 import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
