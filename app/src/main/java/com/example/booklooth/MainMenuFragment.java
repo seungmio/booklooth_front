@@ -64,9 +64,7 @@ public class MainMenuFragment extends Fragment {
         });
         btnBestSeller.setOnClickListener(new View.OnClickListener() {   //베스트셀러(서치)버튼
             @Override
-            public void onClick(View view) {
-                mainActivity.onChangeFragment(3);
-            }
+            public void onClick(View view) { mainActivity.onChangeFragment(3); }
         });
         btnReview.setOnClickListener(new View.OnClickListener() {
             @Override

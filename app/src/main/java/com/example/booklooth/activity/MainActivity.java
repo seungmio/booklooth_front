@@ -14,6 +14,7 @@ import com.example.booklooth.MainMenuFeedFragment;
 import com.example.booklooth.MainMenuFragment;
 import com.example.booklooth.MainMenuMypageFragment;
 import com.example.booklooth.MainMenuSearchFragment;
+import com.example.booklooth.MyPageProfileEditFragment;
 import com.example.booklooth.R;
 import com.example.booklooth.ReviewFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -29,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private AlarmFragment fragmentAlarm = new AlarmFragment();
     private CalendarFragment fragmentCalendar = new CalendarFragment();
     private ReviewFragment fragmentReview = new ReviewFragment();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
