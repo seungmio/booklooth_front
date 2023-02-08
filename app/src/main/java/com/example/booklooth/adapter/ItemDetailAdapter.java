@@ -2,21 +2,16 @@ package com.example.booklooth.adapter;
 
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.booklooth.MainMenuFragment;
 import com.example.booklooth.R;
-import com.example.booklooth.activity.MainActivity;
 import com.example.booklooth.data.ItemDetailData;
 
 import java.util.ArrayList;
@@ -39,8 +34,6 @@ public class ItemDetailAdapter extends RecyclerView.Adapter <ItemDetailAdapter.V
         return vh;
     }
 
-    MainActivity activity;
-
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         //ViewHolder가 재활용될 때 사용되는 메소드
@@ -53,7 +46,6 @@ public class ItemDetailAdapter extends RecyclerView.Adapter <ItemDetailAdapter.V
             @Override
             public void onClick(View view) {
                 // click 시 필요한 동작 정의
-
             }
         });
     }
