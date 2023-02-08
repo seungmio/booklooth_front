@@ -2,25 +2,43 @@ package com.example.booklooth.adapter;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.booklooth.PostFragment;
 import com.example.booklooth.R;
+import com.example.booklooth.ReviewFragment;
+import com.example.booklooth.activity.MainActivity;
 import com.example.booklooth.data.ItemDetailData;
 
 import java.util.ArrayList;
+
 
 public class ItemDetailAdapter extends RecyclerView.Adapter <ItemDetailAdapter.ViewHolder> {
     //베스트 감상평 데이터 리스트
     private ArrayList<ItemDetailData> mDataset;
     public ItemDetailAdapter(ArrayList<ItemDetailData> itemDataSet) {
         mDataset = itemDataSet;
+    }
+
+    private OnItemClickListener itemClickListener;
+
+    //인터페이스 선언
+    public interface OnItemClickListener{
+        //클릭시 동작할 함수
+        void onItemClick(View v);
+    }
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.itemClickListener = listener;
     }
 
     @NonNull
@@ -32,7 +50,9 @@ public class ItemDetailAdapter extends RecyclerView.Adapter <ItemDetailAdapter.V
 
         ViewHolder vh = new ViewHolder(v);
         return vh;
+
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
@@ -42,12 +62,25 @@ public class ItemDetailAdapter extends RecyclerView.Adapter <ItemDetailAdapter.V
         holder.likeTextView.setText("좋아요 " + data.getLike() + "개");
         holder.titleTextView.setText(data.getTitle());
         holder.contentTextView.setText(data.getContent());
+
         holder.userNameTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // click 시 필요한 동작 정의
             }
         });
+        holder.contentTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // click 시 필요한 동작 정의
+                // 게시 fragment로 이동
+                //동작 호출 (onItemClick 함수 호출)
+                if(itemClickListener != null) {
+                    itemClickListener.onItemClick(view);
+                }
+            }
+        });
+
     }
 
     @Override

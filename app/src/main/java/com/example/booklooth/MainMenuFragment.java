@@ -3,6 +3,7 @@ package com.example.booklooth;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -27,10 +28,20 @@ public class MainMenuFragment extends Fragment {
     private RecyclerView.LayoutManager mLayoutManager;
     private ArrayList<ItemDetailData> itemDetailData;
 
+    private AlarmFragment fragmentAlarm = new AlarmFragment();
+    private CalendarFragment fragmentCalendar = new CalendarFragment();
+    private ReviewFragment fragmentReview = new ReviewFragment();
+    private PostFragment fragmentPost = new PostFragment();
+    private MainMenuSearchFragment fragmentSearch = new MainMenuSearchFragment();
+
+    public static MainMenuFragment newInstance() {
+        return new MainMenuFragment();
+    }
+
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment_main_menu, container, false);
 
         ImageButton btnAlarm = (ImageButton) rootView.findViewById(R.id.mainAlarm);
@@ -48,30 +59,33 @@ public class MainMenuFragment extends Fragment {
         bestItemRecyclerView.setAdapter(itemDetailAdapter);
         bestItemRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
-
-
         btnAlarm.setOnClickListener(new View.OnClickListener() {    //알람버튼
             @Override
             public void onClick(View view) {
-                mainActivity.onChangeFragment(1);
+                ((MainActivity)getActivity()).onChangeFragment(newInstance().fragmentAlarm);
             }
         });
         btnBookCal.setOnClickListener(new View.OnClickListener() {  //캘린더버튼
             @Override
             public void onClick(View view) {
-                mainActivity.onChangeFragment(2);
+                ((MainActivity)getActivity()).onChangeFragment(newInstance().fragmentCalendar);
             }
         });
         btnBestSeller.setOnClickListener(new View.OnClickListener() {   //베스트셀러(서치)버튼
             @Override
             public void onClick(View view) {
-                mainActivity.onChangeFragment(3);
+                ((MainActivity)getActivity()).onChangeFragment(newInstance().fragmentSearch);
             }
         });
         btnReview.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                mainActivity.onChangeFragment(4);
+            public void onClick(View view) { ((MainActivity)getActivity()).onChangeFragment(newInstance().fragmentReview); }
+        });
+
+        itemDetailAdapter.setOnItemClickListener(new ItemDetailAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v) {
+                ((MainActivity)getActivity()).onChangeFragment(newInstance().fragmentPost);
             }
         });
 

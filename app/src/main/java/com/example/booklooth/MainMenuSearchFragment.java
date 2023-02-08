@@ -8,8 +8,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.ListView;
+
+import com.example.booklooth.adapter.SearchListViewAdapter;
+import com.example.booklooth.data.SearchListViewData;
 
 import java.util.ArrayList;
 
