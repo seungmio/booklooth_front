@@ -1,11 +1,10 @@
-package com.example.booklooth.activity;
+package com.example.booklooth;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 
-import com.example.booklooth.R;
 import com.example.booklooth.data.SearchListViewData;
 
 import java.util.ArrayList;

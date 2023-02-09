@@ -49,7 +49,7 @@ public class PostAdapter extends RecyclerView.Adapter <PostAdapter.ViewHolder> {
         public TextView postUserNameTextView;   //유저 이름
         public TextView postLikeTextView;   //좋아요 개수
         public TextView postTitleTextView;  //제목
-        public TextView postContentTextView;    //내용
+        public TextView postContentTextView;   //내용
 
         public ViewHolder(@NonNull View view) {
             super(view);
