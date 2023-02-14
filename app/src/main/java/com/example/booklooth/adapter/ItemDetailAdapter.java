@@ -2,11 +2,13 @@ package com.example.booklooth.adapter;
 
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -66,7 +68,10 @@ public class ItemDetailAdapter extends RecyclerView.Adapter <ItemDetailAdapter.V
         holder.userNameTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // click 시 필요한 동작 정의
+                // 팔로우를 한 사람인 경우와 팔로우를 하지 않은 사람인 경우로 나눠서 처리
+                Dialog userProfile = new Dialog(view.getContext());
+                userProfile.setContentView(R.layout.profile_dialog);
+                userProfile.show();
             }
         });
         holder.contentTextView.setOnClickListener(new View.OnClickListener() {

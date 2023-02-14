@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.booklooth.adapter.SearchListViewAdapter;
 import com.example.booklooth.data.SearchListViewData;
@@ -46,20 +48,18 @@ public class MainMenuSearchFragment extends Fragment {
 
         searchListView.setAdapter(searchListViewAdapter);
 
-        // ImageButton bookHeartBtn = (ImageButton)rootView.findViewById(R.id.bookHeartBtn);
-
-        /* bookHeartBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // 버튼 클릭 시 나의 위시리스트로 이동 및 버튼 이미지 변경
-            }
-        }); */
-
         return rootView;
     }
 
     public void sampleSearchData() {
         searchListViewData = new ArrayList<SearchListViewData>();
-        searchListViewData.add(new SearchListViewData(R.drawable.login_google, "노인과 바다", "작가 이름"));
+        searchListViewData.add(new SearchListViewData(R.drawable.bookimagesample, "노인과 바다", "작가 이름"));
+        searchListViewData.add(new SearchListViewData(R.drawable.bookimagesample, "노인과 바다", "작가 이름"));
+        searchListViewData.add(new SearchListViewData(R.drawable.bookimagesample, "노인과 바다", "작가 이름"));
+        searchListViewData.add(new SearchListViewData(R.drawable.bookimagesample, "노인과 바다", "작가 이름"));
+        searchListViewData.add(new SearchListViewData(R.drawable.bookimagesample, "노인과 바다", "작가 이름"));
+        searchListViewData.add(new SearchListViewData(R.drawable.bookimagesample, "노인과 바다", "작가 이름"));
+        searchListViewData.add(new SearchListViewData(R.drawable.bookimagesample, "노인과 바다", "작가 이름"));
+
     }
 }
