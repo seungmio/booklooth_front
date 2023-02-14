@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:background="#00ff0000"
-            android:src="@drawable/search_heart"/>
+            android:src="@drawable/heartbtn"/>
         
     </LinearLayout>
 
