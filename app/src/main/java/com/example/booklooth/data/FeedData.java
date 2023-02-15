@@ -1,6 +1,6 @@
 package com.example.booklooth.data;
 
-public class PostData {
+public class FeedData {
 
     private int ProfileImg;   //유저 프로필사진
     private String userName;    //유저 이름
@@ -9,7 +9,7 @@ public class PostData {
     private String content; //내용
 
 
-    public PostData(String userName, int like, String title, String content){
+    public FeedData(String userName, int like, String title, String content){
         this.userName = userName;
         this.like = like;
         this.title = title;

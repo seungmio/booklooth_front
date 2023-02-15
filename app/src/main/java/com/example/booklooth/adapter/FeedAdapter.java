@@ -9,14 +9,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.booklooth.R;
-import com.example.booklooth.data.PostData;
+import com.example.booklooth.data.FeedData;
 
 import java.util.ArrayList;
 
-public class PostAdapter extends RecyclerView.Adapter <PostAdapter.ViewHolder> {
-    private ArrayList<PostData> mDataset;
+public class FeedAdapter extends RecyclerView.Adapter <FeedAdapter.ViewHolder> {
+    private ArrayList<FeedData> mDataset;
 
-    public PostAdapter(ArrayList postDataSet) {
+    public FeedAdapter(ArrayList postDataSet) {
         mDataset = postDataSet;
     }
 
@@ -30,7 +30,7 @@ public class PostAdapter extends RecyclerView.Adapter <PostAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        PostData data = mDataset.get(position);
+        FeedData data = mDataset.get(position);
         holder.postUserNameTextView.setText(data.getName());
         holder.postLikeTextView.setText("좋아요 " + data.getLike() + "개");
         holder.postTitleTextView.setText(data.getTitle());

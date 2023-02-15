@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +34,7 @@ public class ItemDetailAdapter extends RecyclerView.Adapter <ItemDetailAdapter.V
     }
 
     private OnItemClickListener itemClickListener;
+    private OnCommentClickListener commentClickListener;
 
     //인터페이스 선언
     public interface OnItemClickListener{
@@ -41,6 +43,14 @@ public class ItemDetailAdapter extends RecyclerView.Adapter <ItemDetailAdapter.V
     }
     public void setOnItemClickListener(OnItemClickListener listener){
         this.itemClickListener = listener;
+    }
+
+    public interface OnCommentClickListener{
+        //클릭시 동작할 함수
+        void onCommentClick(View v);
+    }
+    public void setOnCommentClickListener(OnCommentClickListener listener){
+        this.commentClickListener = listener;
     }
 
     @NonNull
@@ -85,7 +95,17 @@ public class ItemDetailAdapter extends RecyclerView.Adapter <ItemDetailAdapter.V
                 }
             }
         });
-
+        holder.commentImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // click 시 필요한 동작 정의
+                // 댓글 fragment 로 이동
+                //동작 호출 (onItemClick 함수 호출)
+                if(commentClickListener != null) {
+                    commentClickListener.onCommentClick(view);
+                }
+            }
+        });
     }
 
     @Override
@@ -100,6 +120,7 @@ public class ItemDetailAdapter extends RecyclerView.Adapter <ItemDetailAdapter.V
         public TextView likeTextView;   //좋아요 개수
         public TextView titleTextView;  //제목
         public TextView contentTextView;    //내용
+        public ImageView commentImageView;  //댓글 이미지뷰
 
         public ViewHolder(@NonNull View view) {
             super(view);
@@ -107,6 +128,7 @@ public class ItemDetailAdapter extends RecyclerView.Adapter <ItemDetailAdapter.V
             likeTextView = (TextView) view.findViewById(R.id.detailviewitem_favoritecounter_textview);
             titleTextView = (TextView) view.findViewById(R.id.detailviewitem_title_textview);
             contentTextView = (TextView) view.findViewById(R.id.detailviewitem_explian_textview);
+            commentImageView = (ImageView) view.findViewById(R.id.detailviewitem_comment_imageview);
         }
     }
 }
