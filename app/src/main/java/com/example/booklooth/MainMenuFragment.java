@@ -33,6 +33,7 @@ public class MainMenuFragment extends Fragment {
     private CalendarFragment fragmentCalendar = new CalendarFragment();
     private ReviewFragment fragmentReview = new ReviewFragment();
     private PostFragment fragmentPost = new PostFragment();
+    private CommentFragment fragmentComment = new CommentFragment();
     private MainMenuSearchFragment fragmentSearch = new MainMenuSearchFragment();
 
     public static MainMenuFragment newInstance() {
@@ -59,6 +60,13 @@ public class MainMenuFragment extends Fragment {
         itemDetailAdapter = new ItemDetailAdapter(itemDetailData);
         bestItemRecyclerView.setAdapter(itemDetailAdapter);
         bestItemRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        bestItemRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()) {
+            @Override
+            public boolean canScrollVertically() { // 세로스크롤 막기
+                return false;
+            }
+        });
 
         btnAlarm.setOnClickListener(new View.OnClickListener() {    //알람버튼
             @Override
@@ -90,6 +98,12 @@ public class MainMenuFragment extends Fragment {
             }
         });
 
+        itemDetailAdapter.setOnCommentClickListener(new ItemDetailAdapter.OnCommentClickListener() {
+            @Override
+            public void onCommentClick(View v) {
+                ((MainActivity)getActivity()).onChangeFragment(newInstance().fragmentComment);
+            }
+        });
         return rootView;
     }
 
@@ -98,6 +112,8 @@ public class MainMenuFragment extends Fragment {
         super.onCreate(savedInstanceState);
         initDataset();
     }
+
+
 
     private void initDataset() {
         //for Test

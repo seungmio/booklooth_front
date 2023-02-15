@@ -12,17 +12,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.booklooth.adapter.ItemDetailAdapter;
-import com.example.booklooth.adapter.PostAdapter;
-import com.example.booklooth.data.ItemDetailData;
-import com.example.booklooth.data.PostData;
+import com.example.booklooth.adapter.FeedAdapter;
+import com.example.booklooth.data.FeedData;
+import com.example.booklooth.data.FeedData;
 
 import java.util.ArrayList;
 
 public class MainMenuFeedFragment extends Fragment {
     private RecyclerView postRecyclerView;
-    private PostAdapter postAdapter;
-    private ArrayList<PostData> postData = new ArrayList<>();
+    private FeedAdapter postAdapter;
+    private ArrayList<FeedData> postData = new ArrayList<>();
     private RecyclerView.LayoutManager mLayoutManager;
 
     @Override
@@ -36,7 +35,7 @@ public class MainMenuFeedFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(getActivity());
         postRecyclerView.setLayoutManager(mLayoutManager);
         postRecyclerView.scrollToPosition(0);
-        postAdapter = new PostAdapter(postData);
+        postAdapter = new FeedAdapter(postData);
         postRecyclerView.setAdapter(postAdapter);
         postRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
@@ -52,9 +51,9 @@ public class MainMenuFeedFragment extends Fragment {
     private void initDataset() {
         //for Test
         postData = new ArrayList<>();
-        postData.add(new PostData("user1", 10, "제목1", "내용1"));
-        postData.add(new PostData("user2", 20, "제목2", "내용2"));
-        postData.add(new PostData("user3", 30, "제목3", "내용3"));
-        postData.add(new PostData("user4", 40, "제목4", "내용4"));
+        postData.add(new FeedData("user1", 10, "제목1", "내용1"));
+        postData.add(new FeedData("user2", 20, "제목2", "내용2"));
+        postData.add(new FeedData("user3", 30, "제목3", "내용3"));
+        postData.add(new FeedData("user4", 40, "제목4", "내용4"));
     }
 }

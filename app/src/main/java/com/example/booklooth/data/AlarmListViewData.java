@@ -4,9 +4,9 @@ public class AlarmListViewData {
     private int memberImage;
     private String memberAlarm;
     private String memberAlarmContent;
+    private long time;
 
-    public AlarmListViewData(int memberImage, String memberAlarm, String memberAlarmContent) {
-        this.memberImage = memberImage;
+    public AlarmListViewData(String memberAlarm, String memberAlarmContent) {
         this.memberAlarm = memberAlarm;
         this.memberAlarmContent = memberAlarmContent;
     }
@@ -22,4 +22,13 @@ public class AlarmListViewData {
     public String getMemberAlarmContent() {
         return this.memberAlarmContent;
     }
+
+    public long getTime() {
+        return time;
+    }
+
+    public void setTime(long time) {
+        this.time = time;
+    }
+
 }
