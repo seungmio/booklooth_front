@@ -1,4 +1,4 @@
-package com.example.booklooth;
+package com.example.booklooth.fragment;
 
 import android.os.Bundle;
 
@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.booklooth.R;
 import com.example.booklooth.adapter.SearchListViewAdapter;
 import com.example.booklooth.data.SearchListViewData;
 

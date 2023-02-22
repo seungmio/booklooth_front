@@ -1,4 +1,4 @@
-package com.example.booklooth;
+package com.example.booklooth.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -14,8 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
+import com.example.booklooth.R;
 import com.example.booklooth.activity.MainActivity;
 import com.example.booklooth.adapter.ItemDetailAdapter;
 import com.example.booklooth.data.ItemDetailData;
@@ -38,6 +38,26 @@ public class MainMenuFragment extends Fragment {
 
     public static MainMenuFragment newInstance() {
         return new MainMenuFragment();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        mainActivity = (MainActivity) getActivity();
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        initDataset();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+
+        mainActivity = null;
     }
 
     @Nullable
@@ -71,46 +91,40 @@ public class MainMenuFragment extends Fragment {
         btnAlarm.setOnClickListener(new View.OnClickListener() {    //알람버튼
             @Override
             public void onClick(View view) {
-                ((MainActivity)getActivity()).onChangeFragment(newInstance().fragmentAlarm);
+                mainActivity.onChangeFragment(newInstance().fragmentAlarm);
             }
         });
         btnBookCal.setOnClickListener(new View.OnClickListener() {  //캘린더버튼
             @Override
             public void onClick(View view) {
-                ((MainActivity)getActivity()).onChangeFragment(newInstance().fragmentCalendar);
+               mainActivity.onChangeFragment(newInstance().fragmentCalendar);
             }
         });
         btnBestSeller.setOnClickListener(new View.OnClickListener() {   //베스트셀러(서치)버튼
             @Override
             public void onClick(View view) {
-                ((MainActivity)getActivity()).onChangeFragment(newInstance().fragmentSearch);
+                mainActivity.onChangeFragment(newInstance().fragmentSearch);
             }
         });
         btnReview.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) { ((MainActivity)getActivity()).onChangeFragment(newInstance().fragmentReview); }
+            public void onClick(View view) { mainActivity.onChangeFragment(newInstance().fragmentReview); }
         });
 
         itemDetailAdapter.setOnItemClickListener(new ItemDetailAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v) {
-                ((MainActivity)getActivity()).onChangeFragment(newInstance().fragmentPost);
+                mainActivity.onChangeFragment(newInstance().fragmentPost);
             }
         });
 
         itemDetailAdapter.setOnCommentClickListener(new ItemDetailAdapter.OnCommentClickListener() {
             @Override
             public void onCommentClick(View v) {
-                ((MainActivity)getActivity()).onChangeFragment(newInstance().fragmentComment);
+                mainActivity.onChangeFragment(newInstance().fragmentComment);
             }
         });
         return rootView;
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        initDataset();
     }
 
 

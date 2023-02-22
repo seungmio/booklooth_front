@@ -1,4 +1,4 @@
-package com.example.booklooth;
+package com.example.booklooth.fragment;
 
 import android.os.Bundle;
 
@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.booklooth.R;
+
 public class MainMenuMypageFragment extends Fragment {
 
     @Override
@@ -23,6 +25,7 @@ public class MainMenuMypageFragment extends Fragment {
         Button profileEdit = (Button)rootView.findViewById(R.id.profileEdit); // 프로필 수정 버튼
         TextView wishlistmoreText = (TextView)rootView.findViewById(R.id.wishlistmoreText); // 위시리스트로 이동
         TextView reviewmoreText = (TextView)rootView.findViewById(R.id.reviewmoreText); // 내 리뷰 보기로 이동
+        TextView followNum = (TextView) rootView.findViewById(R.id.followerNum);    //팔로잉/팔로우로 이동
 
 
         settingBtn.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +64,13 @@ public class MainMenuMypageFragment extends Fragment {
                 MyPageMyReviewFragment myPageMyReviewFragment = new MyPageMyReviewFragment();
                 transaction.replace(R.id.menu_frame_layout, myPageMyReviewFragment);
                 transaction.commit();
+            }
+        });
+
+        followNum.setOnClickListener(new View.OnClickListener() {   //팔로워 팔로잉으로 이동
+            @Override
+            public void onClick(View view) {
+
             }
         });
 

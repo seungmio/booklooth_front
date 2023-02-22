@@ -15,6 +15,7 @@ import com.example.booklooth.R;
 import com.example.booklooth.data.CommentData;
 import com.example.booklooth.data.ItemDetailData;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class CommentAdapter extends RecyclerView.Adapter <CommentAdapter.ViewHolder> {
@@ -40,10 +41,23 @@ public class CommentAdapter extends RecyclerView.Adapter <CommentAdapter.ViewHol
     @Override
     public void onBindViewHolder(@NonNull CommentAdapter.ViewHolder holder, int position) {
         //ViewHolder가 재활용될 때 사용되는 메소드
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  //format 수정해야 함 (timestamp->string 변환)
+        String date_string = dateFormat.format(commentDataSet.get(position).getCommentDate());
+
         CommentData data = commentDataSet.get(position);
         String imageUrl = commentDataSet.get(position).getCommentImg();
         Glide.with(holder.profileImageView.getContext())
                 .load(imageUrl).into(holder.profileImageView);
+        holder.userNameTextView.setText(commentDataSet.get(position).getUserName());
+        holder.timeTextView.setText(date_string);
+        holder.commentTextView.setText(commentDataSet.get(position).getCommentContent());
+        holder.responseTextView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {    //답글달기 click 시 필요한 동작 정의
+
+            }
+        });
 
     }
 
