@@ -13,32 +13,26 @@
         android:textStyle="bold"
         android:textColor="@color/main_color"/>
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/memberImage"
-        android:layout_width="107dp"
-        android:layout_height="107dp"
-        android:layout_margin="10dp" />
-
-    <TextView
+    <GridView
+        android:id="@+id/myReviewGridview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="회원 이름"
-        android:textSize="20dp"
-        android:textColor="@color/black" />
-
-    <TextView
+        android:numColumns="3"/>
+    
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="한줄 소개"
-        android:textSize="17dp"/>
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        android:gravity="bottom|right">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="팔로잉 팔로워"
-        android:textSize="15dp" />
+        <ImageButton
+            android:id="@+id/writeBtn"
+            android:layout_width="81dp"
+            android:layout_height="81dp"
+            android:background="@drawable/writebtn_circlebutton"
+            android:src="@drawable/writebtn" />
+
+    </LinearLayout>
 
 </LinearLayout>
