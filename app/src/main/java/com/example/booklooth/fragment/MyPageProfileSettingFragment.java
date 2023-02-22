@@ -1,4 +1,4 @@
-package com.example.booklooth;
+package com.example.booklooth.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.booklooth.R;
 
 public class MyPageProfileSettingFragment extends Fragment {
 

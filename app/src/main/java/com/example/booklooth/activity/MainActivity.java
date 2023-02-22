@@ -9,15 +9,11 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.booklooth.AlarmFragment;
-import com.example.booklooth.CalendarFragment;
-import com.example.booklooth.MainMenuFeedFragment;
-import com.example.booklooth.MainMenuFragment;
-import com.example.booklooth.MainMenuMypageFragment;
-import com.example.booklooth.MainMenuSearchFragment;
-import com.example.booklooth.PostFragment;
+import com.example.booklooth.fragment.MainMenuFeedFragment;
+import com.example.booklooth.fragment.MainMenuFragment;
+import com.example.booklooth.fragment.MainMenuMypageFragment;
+import com.example.booklooth.fragment.MainMenuSearchFragment;
 import com.example.booklooth.R;
-import com.example.booklooth.ReviewFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 

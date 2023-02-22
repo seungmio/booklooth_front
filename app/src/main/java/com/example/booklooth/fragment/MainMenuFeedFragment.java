@@ -1,4 +1,4 @@
-package com.example.booklooth;
+package com.example.booklooth.fragment;
 
 import android.os.Bundle;
 
@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.booklooth.R;
 import com.example.booklooth.adapter.FeedAdapter;
 import com.example.booklooth.data.FeedData;
 import com.example.booklooth.data.FeedData;
@@ -20,8 +21,8 @@ import java.util.ArrayList;
 
 public class MainMenuFeedFragment extends Fragment {
     private RecyclerView postRecyclerView;
-    private FeedAdapter postAdapter;
-    private ArrayList<FeedData> postData = new ArrayList<>();
+    private FeedAdapter feedAdapter;
+    private ArrayList<FeedData> feedData = new ArrayList<>();
     private RecyclerView.LayoutManager mLayoutManager;
 
     @Override
@@ -35,8 +36,8 @@ public class MainMenuFeedFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(getActivity());
         postRecyclerView.setLayoutManager(mLayoutManager);
         postRecyclerView.scrollToPosition(0);
-        postAdapter = new FeedAdapter(postData);
-        postRecyclerView.setAdapter(postAdapter);
+        feedAdapter = new FeedAdapter(feedData);
+        postRecyclerView.setAdapter(feedAdapter);
         postRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         return rootView;
@@ -50,10 +51,10 @@ public class MainMenuFeedFragment extends Fragment {
 
     private void initDataset() {
         //for Test
-        postData = new ArrayList<>();
-        postData.add(new FeedData("user1", 10, "제목1", "내용1"));
-        postData.add(new FeedData("user2", 20, "제목2", "내용2"));
-        postData.add(new FeedData("user3", 30, "제목3", "내용3"));
-        postData.add(new FeedData("user4", 40, "제목4", "내용4"));
+        feedData = new ArrayList<>();
+        feedData.add(new FeedData("user1", 10, "제목1", "내용1"));
+        feedData.add(new FeedData("user2", 20, "제목2", "내용2"));
+        feedData.add(new FeedData("user3", 30, "제목3", "내용3"));
+        feedData.add(new FeedData("user4", 40, "제목4", "내용4"));
     }
 }

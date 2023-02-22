@@ -4,17 +4,17 @@ import java.sql.Timestamp;
 
 public class CommentData {
     private String commentImg;
-    private int commentId;  //댓글 id
-    private int reviewId;   //리뷰 id
-    private int userId; //사용자 id
+    private int commentId;  //댓글 고유 id
+    private int reviewId;   //리뷰 고유 id
+    private String userName;
     private Timestamp commentDate;  //댓글 작성 날짜
     private String commentContent;  //댓글 내용
 
-    public CommentData(String commentImg, int commentId, int reviewId, int userId, Timestamp commentDate, String commentContent) {
+    public CommentData(String commentImg, int commentId, int reviewId, String userName, Timestamp commentDate, String commentContent) {
         this.commentImg = commentImg;
         this.commentId = commentId;
         this.reviewId = reviewId;
-        this.userId = userId;
+        this.userName = userName;
         this.commentDate = commentDate;
         this.commentContent = commentContent;
     }
@@ -43,12 +43,12 @@ public class CommentData {
         this.reviewId = reviewId;
     }
 
-    public int getUserId() {
-        return userId;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUserName(String userId) {
+        this.userName = userId;
     }
 
     public Timestamp getCommentDate() {
